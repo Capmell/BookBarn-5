@@ -1,0 +1,17 @@
+﻿@model AuthorListViewModel
+
+<h1>@Model.PageTitle</h1>
+
+<p>Total authors: <strong>@Model.TotalCount</strong></p>
+
+@if (Model.Authors == null || Model.Authors.Count == 0)
+{
+    <p><em>@Model.EmptyMessage</em></p>
+}
+else
+{
+    @foreach (var author in Model.Authors)
+    {
+        <partial name="_AuthorCard" model="author" />
+    }
+}

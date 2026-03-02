@@ -1,0 +1,17 @@
+﻿@model BookListViewModel
+
+<h1>@Model.PageTitle</h1>
+
+<p>Total books: <strong>@Model.TotalCount</strong></p>
+
+@if (Model.Books == null || Model.Books.Count == 0)
+{
+    <p><em>@Model.EmptyMessage</em></p>
+}
+else
+{
+    @foreach (var book in Model.Books)
+    {
+        <partial name="_BookCard" model="book" />
+    }
+}
