@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="../BookBarn.Tests/BookBarn.Tests.csproj" Id="b667a57d-f00f-40af-a488-e9f25be7b6c1" />
   <Project Path="BookBarn.csproj" />
 </Solution>

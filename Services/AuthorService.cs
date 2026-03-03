@@ -47,6 +47,16 @@ namespace BookBarn.Services
                 })
                 .FirstOrDefaultAsync();
         }
+
+        Task<List<AuthorListItemDto>> IAuthorService.GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<AuthorListItemDto?> IAuthorService.GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
