@@ -5,8 +5,7 @@ namespace BookBarn.Models
 {
     public class BookBarnContext : IdentityDbContext
     {
-        public BookBarnContext(DbContextOptions<BookBarnContext> options)
-            : base(options)
+        public BookBarnContext(DbContextOptions options) : base(options)
         {
         }
 

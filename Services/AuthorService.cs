@@ -14,24 +14,24 @@ namespace BookBarn.Services
             _context = context;
         }
 
-        public async Task<List<BookListItemDto>> GetAllAsync()
-        {
-            // Business rule example:
-            // Only return books with a title and a non-negative price.
-            // Also enforce a consistent sort order.
-            return await _context.Authors
-                .AsNoTracking()
-                .Where(b => b.Id != null && b.MiddleName.Trim() != "" )
-                .OrderBy(b => b.Id)
-                .Select(b => new AuthorListItemDto
-                {
-                    Id = b.Id,
-                    Title = b.MiddleName!,
-                    Author = b.FirstName,
-                    Price = b.LastName
-                })
-                .ToListAsync();
-        }
+        //public async Task<List<BookListItemDto>> GetAllAsync()
+        //{
+        //    // Business rule example:
+        //    // Only return books with a title and a non-negative price.
+        //    // Also enforce a consistent sort order.
+        //    return await _context.Authors
+        //        .AsNoTracking()
+        //        .Where(b => b.Id != null && b.MiddleName.Trim() != "" )
+        //        .OrderBy(b => b.Id)
+        //        .Select(b => new AuthorListItemDto
+        //        {
+        //            Id = b.Id,
+        //            Title = b.MiddleName!,
+        //            Author = b.FirstName,
+        //            Price = b.LastName
+        //        })
+        //        .ToListAsync();
+        //}
 
         public async Task<BookListItemDto?> GetByIdAsync(int id)
         {
